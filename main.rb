@@ -1,0 +1,16 @@
+my_dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit", "hell", "hello"]
+string_to_use = "Hello, from below"
+ 
+def substring(dictionary, string)
+  string_array = string.split(" ")
+  substrings = { }
+  puts string_array.to_s
+  dictionary.each do |word_in_dictionary|
+    string_array.each do |word_in_string|
+      word_in_string = word_in_string.downcase.gsub(/[^a-z0-9\s]/i, '')
+      puts word_in_dictionary if word_in_string.match(/#{word_in_dictionary}/) and word_in_dictionary != word_in_string
+    end
+  end
+end
+
+substring(my_dictionary, string_to_use)
