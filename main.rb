@@ -10,11 +10,7 @@ def substring(dictionary, string)
       word_in_string = word_in_string.downcase.gsub(/[^a-z0-9\s]/i, '')
       sub = word_in_dictionary if word_in_string.match(/#{word_in_dictionary}/)
       if sub != nil
-        if substrings[sub] == nil
-          substrings[sub] = 1
-        else
-          substrings[sub] += 1
-        end
+        substrings[sub] = substrings[sub].to_i + 1
       end
     end
   end
